@@ -9,5 +9,11 @@ import json
 import requests
 
 r = requests.get(url)
-print (r.json())
+
+status = r.json()['meta']['status']
+
+if (status == 200):
+    print("Connection to jisho.org successful")
+else:
+    print ("Error connecting to jisho.org: " + str(status))
 
