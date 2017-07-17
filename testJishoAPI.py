@@ -3,12 +3,15 @@
 # link to their API, note that their API is also a work in progress
 # http://jisho.org/api/v1/search/words?keyword=食べる
 
-url = "http://jisho.org/api/v1/search/words?keyword=食べる"
+url = "http://jisho.org/api/v1/search/words?keyword="
 
+import unicodedata
 import json
 import requests
 
-r = requests.get(url).json()
+word = input("Enter Word to Search: ")
+
+r = requests.get(url + word).json()
 status = r['meta']['status']
 
 if (status == 200):
