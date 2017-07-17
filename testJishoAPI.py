@@ -17,8 +17,10 @@ status = r['meta']['status']
 if (status == 200):
     print("Connection to jisho.org successful")
 
-    data = r['data']
-    print (data[0]['senses'])
+    data = r['data'][0]['senses']
+#    print (data)
+    print("English Definition: " + str(data[0]['english_definitions']))
+    print("Type of Verb: " + str(data[0]['parts_of_speech']))
 
 else:
     print ("Error connecting to jisho.org: " + str(status))
