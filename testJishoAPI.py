@@ -15,7 +15,7 @@ if (status == 200):
     print("Connection to jisho.org successful")
 
     data = r['data']
-    print (data)
+    print (data[0]['senses'])
 
 else:
     print ("Error connecting to jisho.org: " + str(status))
