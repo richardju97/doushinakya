@@ -52,7 +52,10 @@ masu = 'ます'
 class doushi:
     def __init__(self, dic):
         self.forms = {'Dictionary Form' : dic}
-        self.stem_length = len(dic) - 2
+        self.length = len(dic) - 2 #refers to the number of characters in the stem form
+
+    def getStemLength(self):
+        return self.length
 
 i = input("Enter Dictionary Form: ")
 stem_length = len(word) - 2
