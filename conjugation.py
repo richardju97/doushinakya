@@ -71,7 +71,7 @@ class doushi:
             data = r['data'][0]['senses'][0]
             
             self.forms['English Definition'] = data['english_definitions']
-            print("English Definition: " + str(data['english_definitions']))
+#            print("English Definition: " + str(data['english_definitions']))
 
 #            self.forms['Type of Verb'] = data['parts_of_speech'][0]
 #            print("Type of Verb: " + str(data['parts_of_speech']))
@@ -79,13 +79,15 @@ class doushi:
     #   If Ru-Verb
             if(data['parts_of_speech'][0] == 'Ichidan verb'):
                 self.forms['Type'] = 'Ichidan verb'
-                print("Masu Form: " + self.forms['Dictionary Form'][:self.length+1] + masu)
-    
+                self.forms['Masu'] = (self.forms['Dictionary Form'][:self.length+1] + masu)
+#                print("Masu Form: " + self.forms['Dictionary Form'][:self.length+1] + masu)
+
     #   If U-Verb
             elif(data['parts_of_speech'][0][:10] == 'Godan verb'):
                 self.forms['Type'] = 'Godan verb'
                 utoi = chr(ord(self.forms['Dictionary Form'][self.length+1])-1)
-                print("Masu Form: " + self.forms['Dictionary Form'][:self.length+1] + str(utoi) + masu)
+                self.forms['Masu'] = (self.forms['Dictionary Form'][:self.length+1] + str(utoi) + masu)
+#                print("Masu Form: " + self.forms['Dictionary Form'][:self.length+1] + str(utoi) + masu)
 
         else:
                 print ("Error connecting to jisho.org: " + str(status))
