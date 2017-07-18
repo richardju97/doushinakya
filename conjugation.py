@@ -23,8 +23,8 @@ url = "http://jisho.org/api/v1/search/words?keyword="
 # masuForm = dictionaryForm.decode("utf-8")
 # stem_length = len(masuForm) - 2
 # 
-# masu = 'ます'
-# 
+masu = 'ます'
+#
 # # Ru-Verbs
 # # print masuForm[:stem_length+1] + masu.decode("utf-8")
 # 
@@ -56,11 +56,16 @@ status = r['meta']['status']
 
 if (status == 200):
 #    print("Connection to jisho.org successful")
-    
-    data = r['data'][0]['senses']
+
+    data = r['data'][0]['senses'][0]
     #    print (data)
-    print("English Definition: " + str(data[0]['english_definitions']))
-    print("Type of Verb: " + str(data[0]['parts_of_speech']))
+    print("English Definition: " + str(data['english_definitions']))
+    print("Type of Verb: " + str(data['parts_of_speech']))
+
+    if(data['parts_of_speech'][0] == 'Ichidan verb'):
+        stem_length = len(word) - 2
+        print("Masu Form: " + word[:stem_length+1] + masu)
+
 
 else:
     print ("Error connecting to jisho.org: " + str(status))
