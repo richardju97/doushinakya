@@ -49,7 +49,7 @@ masu = 'ます'
 
 # Either functions with dic -> masu, masu -> dic, etc. or object initialized with dictionary form
 
-word = input("Enter Word: ")
+word = input("Enter Dictionary Form: ")
 
 r = requests.get(url + word).json()
 status = r['meta']['status']
@@ -62,10 +62,13 @@ if (status == 200):
     print("English Definition: " + str(data['english_definitions']))
     print("Type of Verb: " + str(data['parts_of_speech']))
 
-    if(data['parts_of_speech'][0] == 'Ichidan verb'):
-        stem_length = len(word) - 2
-        print("Masu Form: " + word[:stem_length+1] + masu)
+    stem_length = len(word) - 2
 
+    if(data['parts_of_speech'][0] == 'Ichidan verb'):
+        print("Masu Form: " + word[:stem_length+1] + masu)
+    elif(data['parts_of_speech'][0][:10] == 'Godan verb'):
+        utoi = chr(ord(word[stem_length+1])-1)
+        print("Masu Form: " + word[:stem_length+1] + str(utoi) + masu)
 
 else:
     print ("Error connecting to jisho.org: " + str(status))
