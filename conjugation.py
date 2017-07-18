@@ -2,6 +2,10 @@
 
 import unicodedata
 import sys
+import json
+import requests
+
+url = "http://jisho.org/api/v1/search/words?keyword="
 
 # Functions Needed
 # Dictionary -> Masu
@@ -44,3 +48,19 @@ import sys
 # # Other forms still needed: Volitional, Te-Form, Ta-Form?, Negative, Potential
 
 # Either functions with dic -> masu, masu -> dic, etc. or object initialized with dictionary form
+
+word = input("Enter Word: ")
+
+r = requests.get(url + word).json()
+status = r['meta']['status']
+
+if (status == 200):
+#    print("Connection to jisho.org successful")
+    
+    data = r['data'][0]['senses']
+    #    print (data)
+    print("English Definition: " + str(data[0]['english_definitions']))
+    print("Type of Verb: " + str(data[0]['parts_of_speech']))
+
+else:
+    print ("Error connecting to jisho.org: " + str(status))
