@@ -49,7 +49,12 @@ masu = 'ます'
 
 # Either functions with dic -> masu, masu -> dic, etc. or object initialized with dictionary form
 
+class doushi:
+    def __init__(self, dic):
+        self.forms = {'Dictionary Form' : dic}
+
 word = input("Enter Dictionary Form: ")
+stem_length = len(word) - 2
 
 r = requests.get(url + word).json()
 status = r['meta']['status']
@@ -58,14 +63,14 @@ if (status == 200):
 #    print("Connection to jisho.org successful")
 
     data = r['data'][0]['senses'][0]
-    #    print (data)
     print("English Definition: " + str(data['english_definitions']))
     print("Type of Verb: " + str(data['parts_of_speech']))
 
-    stem_length = len(word) - 2
-
+#   If Ru-Verb
     if(data['parts_of_speech'][0] == 'Ichidan verb'):
         print("Masu Form: " + word[:stem_length+1] + masu)
+
+#   If U-Verb
     elif(data['parts_of_speech'][0][:10] == 'Godan verb'):
         utoi = chr(ord(word[stem_length+1])-1)
         print("Masu Form: " + word[:stem_length+1] + str(utoi) + masu)
