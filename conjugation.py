@@ -1,4 +1,4 @@
-# Conjugation.py
+# conjugation.py
 
 import unicodedata
 import sys
@@ -53,31 +53,59 @@ class doushi:
     def __init__(self, dic):
         self.forms = {'Dictionary Form' : dic}
         self.length = len(dic) - 2 #refers to the number of characters in the stem form
+        self.computeForms()
 
     def getStemLength(self):
         return self.length
 
+    def computeForms(self):
+        res, data = self.accessJisho()
+
+    def accessJisho(self):
+        r = requests.get(url + self.forms['Dictionary Form']).json()
+        status = r['meta']['status']
+
+        if (status == 200):
+    #    print("Connection to jisho.org successful")
+    
+            data = r['data'][0]['senses'][0]
+            print("English Definition: " + str(data['english_definitions']))
+            print("Type of Verb: " + str(data['parts_of_speech']))
+    
+    #   If Ru-Verb
+            if(data['parts_of_speech'][0] == 'Ichidan verb'):
+                print("Masu Form: " + word[:stem_length+1] + masu)
+    
+    #   If U-Verb
+            elif(data['parts_of_speech'][0][:10] == 'Godan verb'):
+                utoi = chr(ord(word[stem_length+1])-1)
+                print("Masu Form: " + word[:stem_length+1] + str(utoi) + masu)
+
+        else:
+                print ("Error connecting to jisho.org: " + str(status))
+
+
 i = input("Enter Dictionary Form: ")
-stem_length = len(word) - 2
-
-r = requests.get(url + word).json()
-status = r['meta']['status']
-
-if (status == 200):
-#    print("Connection to jisho.org successful")
-
-    data = r['data'][0]['senses'][0]
-    print("English Definition: " + str(data['english_definitions']))
-    print("Type of Verb: " + str(data['parts_of_speech']))
-
-#   If Ru-Verb
-    if(data['parts_of_speech'][0] == 'Ichidan verb'):
-        print("Masu Form: " + word[:stem_length+1] + masu)
-
-#   If U-Verb
-    elif(data['parts_of_speech'][0][:10] == 'Godan verb'):
-        utoi = chr(ord(word[stem_length+1])-1)
-        print("Masu Form: " + word[:stem_length+1] + str(utoi) + masu)
-
-else:
-    print ("Error connecting to jisho.org: " + str(status))
+#stem_length = len(word) - 2
+#
+#r = requests.get(url + word).json()
+#status = r['meta']['status']
+#
+#if (status == 200):
+##    print("Connection to jisho.org successful")
+#
+#    data = r['data'][0]['senses'][0]
+#    print("English Definition: " + str(data['english_definitions']))
+#    print("Type of Verb: " + str(data['parts_of_speech']))
+#
+##   If Ru-Verb
+#    if(data['parts_of_speech'][0] == 'Ichidan verb'):
+#        print("Masu Form: " + word[:stem_length+1] + masu)
+#
+##   If U-Verb
+#    elif(data['parts_of_speech'][0][:10] == 'Godan verb'):
+#        utoi = chr(ord(word[stem_length+1])-1)
+#        print("Masu Form: " + word[:stem_length+1] + str(utoi) + masu)
+#
+#else:
+#    print ("Error connecting to jisho.org: " + str(status))
