@@ -58,10 +58,10 @@ class doushi:
     def getStemLength(self):
         return self.length
 
-    def computeForms(self):
-        res, data = self.accessJisho()
+#    def computeForms(self):
+#        res, data = self.accessJisho()
 
-    def accessJisho(self):
+    def computeForms(self):
         r = requests.get(url + self.forms['Dictionary Form']).json()
         status = r['meta']['status']
 
@@ -69,23 +69,35 @@ class doushi:
     #    print("Connection to jisho.org successful")
     
             data = r['data'][0]['senses'][0]
+            
+            self.forms['English Definition'] = data['english_definitions']
             print("English Definition: " + str(data['english_definitions']))
-            print("Type of Verb: " + str(data['parts_of_speech']))
-    
+
+#            self.forms['Type of Verb'] = data['parts_of_speech'][0]
+#            print("Type of Verb: " + str(data['parts_of_speech']))
+
     #   If Ru-Verb
             if(data['parts_of_speech'][0] == 'Ichidan verb'):
-                print("Masu Form: " + word[:stem_length+1] + masu)
+                self.forms['Type'] = 'Ichidan verb'
+                print("Masu Form: " + self.forms['Dictionary Form'][:self.length+1] + masu)
     
     #   If U-Verb
             elif(data['parts_of_speech'][0][:10] == 'Godan verb'):
-                utoi = chr(ord(word[stem_length+1])-1)
-                print("Masu Form: " + word[:stem_length+1] + str(utoi) + masu)
+                self.forms['Type'] = 'Godan verb'
+                utoi = chr(ord(self.forms['Dictionary Form'][self.length+1])-1)
+                print("Masu Form: " + self.forms['Dictionary Form'][:self.length+1] + str(utoi) + masu)
 
         else:
                 print ("Error connecting to jisho.org: " + str(status))
+#                return status, None
 
+    def getForms(self):
+        return self.forms
 
 i = input("Enter Dictionary Form: ")
+myWord = doushi(i)
+print(myWord.getForms())
+
 #stem_length = len(word) - 2
 #
 #r = requests.get(url + word).json()
