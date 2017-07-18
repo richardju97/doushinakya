@@ -52,8 +52,9 @@ masu = 'ます'
 class doushi:
     def __init__(self, dic):
         self.forms = {'Dictionary Form' : dic}
+        self.stem_length = len(dic) - 2
 
-word = input("Enter Dictionary Form: ")
+i = input("Enter Dictionary Form: ")
 stem_length = len(word) - 2
 
 r = requests.get(url + word).json()
