@@ -91,7 +91,10 @@ class doushi:
         self.forms['Masu'] = (self.forms['Dictionary Form'][:self.length+1] + str(utoi) + masu)
 
         # Nai Form
-        utoa = chr(ord(self.forms['Dictionary Form'][self.length+1])-2)
+        if (self.forms['Dictionary Form'][self.length+1] == 'う'):
+            utoa = 'わ'
+        else:
+            utoa = chr(ord(self.forms['Dictionary Form'][self.length+1])-2)
         self.forms['Nai'] = (self.forms['Dictionary Form'][:self.length+1] + str(utoa) + nai)
 
         # Potential Form
