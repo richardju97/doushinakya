@@ -27,6 +27,7 @@ masu = 'ます'
 nai = 'ない'
 rareru = 'られる'
 te = 'て'
+you = 'よう'
 #
 # # Ru-Verbs
 # # print masuForm[:stem_length+1] + masu.decode("utf-8")
@@ -78,6 +79,9 @@ class doushi:
 
         # Potential Form
         self.forms['Potential'] = (self.forms['Dictionary Form'][:self.length+1] + rareru)
+    
+        # Volitional Form
+        self.forms['Volitional'] = (self.forms['Dictionary Form'][:self.length+1] + you)
     
     def computeGodan(self):
         self.forms['Type'] = 'Godan verb'
