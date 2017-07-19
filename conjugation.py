@@ -25,6 +25,7 @@ url = "http://jisho.org/api/v1/search/words?keyword="
 # 
 masu = 'ます'
 nai = 'ない'
+rareru = 'られる'
 #
 # # Ru-Verbs
 # # print masuForm[:stem_length+1] + masu.decode("utf-8")
@@ -64,12 +65,23 @@ class doushi:
 
     def computeIchidan(self):
         self.forms['Type'] = 'Ichidan verb'
+        
+        # Masu Form
         self.forms['Masu'] = (self.forms['Dictionary Form'][:self.length+1] + masu)
+        
+        # Nai Form
+        self.forms['Nai'] = (self.forms['Dictionary Form'][:self.length+1] + nai)
+
+        # Potential Form
+        self.forms['Potential'] = (self.forms['Dictionary Form'][:self.length+1] + rareru)
     
     def computeGodan(self):
         self.forms['Type'] = 'Godan verb'
+        
+        # Masu Form
         utoi = chr(ord(self.forms['Dictionary Form'][self.length+1])-1)
         self.forms['Masu'] = (self.forms['Dictionary Form'][:self.length+1] + str(utoi) + masu)
+
 
     def computeForms(self):
         r = requests.get(url + self.forms['Dictionary Form']).json()
