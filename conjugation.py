@@ -24,6 +24,7 @@ url = "http://jisho.org/api/v1/search/words?keyword="
 # stem_length = len(masuForm) - 2
 # 
 masu = 'ます'
+nai = 'ない'
 #
 # # Ru-Verbs
 # # print masuForm[:stem_length+1] + masu.decode("utf-8")
@@ -61,6 +62,15 @@ class doushi:
 #    def computeForms(self):
 #        res, data = self.accessJisho()
 
+    def computeIchidan(self):
+        self.forms['Type'] = 'Ichidan verb'
+        self.forms['Masu'] = (self.forms['Dictionary Form'][:self.length+1] + masu)
+    
+    def computeGodan(self):
+        self.forms['Type'] = 'Godan verb'
+        utoi = chr(ord(self.forms['Dictionary Form'][self.length+1])-1)
+        self.forms['Masu'] = (self.forms['Dictionary Form'][:self.length+1] + str(utoi) + masu)
+
     def computeForms(self):
         r = requests.get(url + self.forms['Dictionary Form']).json()
         status = r['meta']['status']
@@ -76,17 +86,14 @@ class doushi:
 #            self.forms['Type of Verb'] = data['parts_of_speech'][0]
 #            print("Type of Verb: " + str(data['parts_of_speech']))
 
-    #   If Ru-Verb
+    #   If Ru-Verb / Ichidan
             if(data['parts_of_speech'][0] == 'Ichidan verb'):
-                self.forms['Type'] = 'Ichidan verb'
-                self.forms['Masu'] = (self.forms['Dictionary Form'][:self.length+1] + masu)
+                self.computeIchidan()
 #                print("Masu Form: " + self.forms['Dictionary Form'][:self.length+1] + masu)
 
-    #   If U-Verb
+    #   If U-Verb / Godan
             elif(data['parts_of_speech'][0][:10] == 'Godan verb'):
-                self.forms['Type'] = 'Godan verb'
-                utoi = chr(ord(self.forms['Dictionary Form'][self.length+1])-1)
-                self.forms['Masu'] = (self.forms['Dictionary Form'][:self.length+1] + str(utoi) + masu)
+                self.computeGodan()
 #                print("Masu Form: " + self.forms['Dictionary Form'][:self.length+1] + str(utoi) + masu)
 
         else:
