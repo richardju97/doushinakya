@@ -90,6 +90,9 @@ class doushi:
         utoi = chr(ord(self.forms['Dictionary Form'][self.length+1])-1)
         self.forms['Masu'] = (self.forms['Dictionary Form'][:self.length+1] + str(utoi) + masu)
 
+        # Potential Form
+        utoe = chr(ord(self.forms['Dictionary Form'][self.length+1])+1)
+        self.forms['Potential'] = (self.forms['Dictionary Form'][self.length+1] + str(utoe) + 'る')
 
     def computeForms(self):
         r = requests.get(url + self.forms['Dictionary Form']).json()
