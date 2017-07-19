@@ -26,6 +26,7 @@ url = "http://jisho.org/api/v1/search/words?keyword="
 masu = 'ます'
 nai = 'ない'
 rareru = 'られる'
+te = 'て'
 #
 # # Ru-Verbs
 # # print masuForm[:stem_length+1] + masu.decode("utf-8")
@@ -71,6 +72,9 @@ class doushi:
         
         # Nai Form
         self.forms['Nai'] = (self.forms['Dictionary Form'][:self.length+1] + nai)
+
+        # Te Form
+        self.forms['Te'] = (self.forms['Dictionary Form'][:self.length+1] + te)
 
         # Potential Form
         self.forms['Potential'] = (self.forms['Dictionary Form'][:self.length+1] + rareru)
