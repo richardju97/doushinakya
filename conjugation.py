@@ -90,6 +90,10 @@ class doushi:
         utoi = chr(ord(self.forms['Dictionary Form'][self.length+1])-1)
         self.forms['Masu'] = (self.forms['Dictionary Form'][:self.length+1] + str(utoi) + masu)
 
+        # Nai Form
+        utoa = chr(ord(self.forms['Dictionary Form'][self.length+1])-2)
+        self.forms['Nai'] = (self.forms['Dictionary Form'][:self.length+1] + str(utoa) + nai)
+
         # Potential Form
         utoe = chr(ord(self.forms['Dictionary Form'][self.length+1])+1)
         self.forms['Potential'] = (self.forms['Dictionary Form'][self.length+1] + str(utoe) + 'る')
