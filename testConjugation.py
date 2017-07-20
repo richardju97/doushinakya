@@ -4,6 +4,7 @@ import conjugation
 
 #Test 1:
 #Ichidan Verbs
+#食べる　食べます　食べよう　食べない　食べて　食べられる　to eat
 #
 #Test 2:
 #Godan Verbs w/　う
@@ -40,6 +41,7 @@ import conjugation
 #
 #Test 13:
 #Godan Verbs w/ む
+#飲む　飲みます　飲もう　飲まない　飲んで　飲める　to drink
 #
 #Test 14:
 #Godan Verbs w/ る
