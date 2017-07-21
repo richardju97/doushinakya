@@ -101,6 +101,9 @@ class doushi:
         utoe = chr(ord(self.forms['Dictionary Form'][self.length+1])+1)
         self.forms['Potential'] = (self.forms['Dictionary Form'][self.length+1] + str(utoe) + 'る')
 
+    def computeIrregular(self):
+        self.forms['Type'] = 'Irregular verb'
+
     def computeForms(self):
         r = requests.get(url + self.forms['Dictionary Form']).json()
         status = r['meta']['status']
@@ -125,6 +128,8 @@ class doushi:
             elif(data['parts_of_speech'][0][:10] == 'Godan verb'):
                 self.computeGodan()
 #                print("Masu Form: " + self.forms['Dictionary Form'][:self.length+1] + str(utoi) + masu)
+            else:
+                self.computeIrregular()
 
         else:
                 print ("Error connecting to jisho.org: " + str(status))
