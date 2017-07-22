@@ -50,7 +50,7 @@ import conjugation
 #Godan Verbs w/ ゆ
 #
 #Test 16:
-#Irregular Verb -　行く
+#Irregular Verb -　する
 #
 #Test 17:
 #Irregular Verb - 来る
