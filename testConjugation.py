@@ -51,6 +51,8 @@ import conjugation
 #
 #Test 16:
 #Irregular Verb -　する
+#する　します　しよう　しない　（）　でくる　to do
 #
 #Test 17:
 #Irregular Verb - 来る
+#来る　来ます　（）　来ない　（）　（）　to come
