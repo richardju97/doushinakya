@@ -56,3 +56,5 @@ import conjugation
 #Test 17:
 #Irregular Verb - 来る
 #来る　来ます　（）　来ない　（）　（）　to come
+
+#What happens to suru verbs? E.g. 散歩する
