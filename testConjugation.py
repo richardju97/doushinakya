@@ -45,6 +45,7 @@ import conjugation
 #
 #Test 14:
 #Godan Verbs w/ る
+#成る　成ります　成ろう　成らない　（）　成れる　to become
 #
 #Test 15:
 #Godan Verbs w/ ゆ
