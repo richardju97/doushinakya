@@ -138,9 +138,17 @@ class doushi:
     def getForms(self):
         return self.forms
 
+    def __str__(self):
+        c = "\n"
+        for x in self.forms:
+            c += (str(x) + ": " + str(self.forms[x]))
+            c += '\n'
+        
+        return c
+
 i = input("Enter Dictionary Form: ")
 myWord = doushi(i)
-print(myWord.getForms())
+print(myWord)
 
 #stem_length = len(word) - 2
 #
