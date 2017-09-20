@@ -2,15 +2,31 @@
 
 from conjugation import doushi
 
+print("Running all test cases:\n")
+
+def test(num, testa, testb):
+    print("====== test" + str(num) + " ======\n")
+    print("---- Running test" + str(num) + " ----")
+
+    if(testa == testb):
+        print("Test passed.\n")
+    else:
+        print("Test failed.\n")
+
+
 #Test 1:
 #Ichidan Verbs
 #食べる　食べます　食べよう　食べない　食べて　食べられる　to eat
-test1 = doushi("食べる")
+test1 = doushi("食べる").getForms()
+test1sol = {'Dictionary Form': '食べる', 'English Definition': ['to eat'], 'Type': 'Ichidan verb', 'Masu': '食べます', 'Nai': '食べない', 'Te': '食べて', 'Potential': '食べられる', 'Volitional': '食べよう'}
 
+test(1, test1, test1sol)
 
 #Test 2:
 #Godan Verbs w/　う
-#
+
+test(2, test1, test1sol)
+
 #Test 3:
 #Godan Verbs w/　く
 #
