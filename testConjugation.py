@@ -1,11 +1,13 @@
 # Test Case File for conjugation.py
 
-import conjugation
+from conjugation import doushi
 
 #Test 1:
 #Ichidan Verbs
 #食べる　食べます　食べよう　食べない　食べて　食べられる　to eat
-#
+test1 = doushi("食べる")
+
+
 #Test 2:
 #Godan Verbs w/　う
 #

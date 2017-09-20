@@ -146,9 +146,9 @@ class doushi:
         
         return c
 
-i = input("Enter Dictionary Form: ")
-myWord = doushi(i)
-print(myWord)
+#i = input("Enter Dictionary Form: ")
+#myWord = doushi(i)
+#print(myWord)
 
 #stem_length = len(word) - 2
 #
