@@ -1,4 +1,6 @@
 # Test Case File for conjugation.py
+
+# Autocommits when the test case is run
 import subprocess
 import datetime
 n = str(datetime.datetime.now())
@@ -7,7 +9,7 @@ msg = "Commit by Testall on " + n
 subprocess.check_output(['git', 'commit', '-m', msg])
 subprocess.check_output(['git', 'push', 'origin', 'master'])
 
-
+# Import conjugation.py
 from conjugation import doushi
 
 print("Running all test cases:\n")
@@ -52,7 +54,19 @@ test(2, test2, test1sol)
 #
 #Test 5:
 #Godan Verbs w/　す
-#
+
+test5 = doushi("話す").getForms()
+test5sol = {'Dictionary Form': '話す',
+            'English Definition': ['to talk', 'to speak', 'to converse', 'to chat'],
+            'Type': 'Godan verb',
+            'Masu': '話します',
+            'Nai': '話さない',
+            'Te':'話して',
+            'Potential':'話せる',
+            'Volitional':'話そう'
+}
+test(5, test5, test5sol)
+
 #Test 6:
 #Godan Verbs w/ ず
 #
