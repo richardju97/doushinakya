@@ -1,4 +1,12 @@
 # Test Case File for conjugation.py
+import subprocess
+import datetime
+n = str(datetime.datetime.now())
+subprocess.check_output(['git', 'add', 'conjugation.py', 'testConjugation.py'])
+msg = "Commit by Testall on " + n
+subprocess.check_output(['git', 'commit', '-m', msg])
+subprocess.check_output(['git', 'push', 'origin', 'master'])
+
 
 from conjugation import doushi
 
@@ -18,14 +26,23 @@ def test(num, testa, testb):
 #Ichidan Verbs
 #食べる　食べます　食べよう　食べない　食べて　食べられる　to eat
 test1 = doushi("食べる").getForms()
-test1sol = {'Dictionary Form': '食べる', 'English Definition': ['to eat'], 'Type': 'Ichidan verb', 'Masu': '食べます', 'Nai': '食べない', 'Te': '食べて', 'Potential': '食べられる', 'Volitional': '食べよう'}
+test1sol = {'Dictionary Form': '食べる',
+            'English Definition': ['to eat'],
+            'Type': 'Ichidan verb',
+            'Masu': '食べます',
+            'Nai': '食べない',
+            'Te': '食べて',
+            'Potential': '食べられる',
+            'Volitional': '食べよう'
+}
 
 test(1, test1, test1sol)
 
 #Test 2:
 #Godan Verbs w/　う
 
-test(2, test1, test1sol)
+test2 = doushi("言う").getForms()
+test(2, test2, test1sol)
 
 #Test 3:
 #Godan Verbs w/　く
