@@ -45,12 +45,17 @@ test(1, test1, test1sol)
 #Test 2:
 #Godan Verbs w/　う
 
-test2 = doushi("言う").getForms()
-test(2, test2, test1sol)
+test2 = doushi("買う").getForms()
+test2sol = {}
+test(2, test2, test2sol)
 
 #Test 3:
 #Godan Verbs w/　く
-#
+
+test3 = doushi("").getForms()
+test3sol = {}
+test(3, test3, test3sol)
+
 #Test 4:
 #Godan Verbs w/ ぐ
 #
@@ -93,20 +98,70 @@ test(5, test5, test5sol)
 #Test 13:
 #Godan Verbs w/ む
 #飲む　飲みます　飲もう　飲まない　飲んで　飲める　to drink
-#
+
+test13 = doushi("飲む").getForms()
+test13sol = {'Dictionary Form': '話す',
+            'English Definition': [''],
+            'Type': 'Godan verb',
+            'Masu': '',
+            'Nai': '',
+            'Te':'',
+            'Potential':'',
+            'Volitional':''
+}
+test(13, test13, test13sol)
+
 #Test 14:
 #Godan Verbs w/ る
 #成る　成ります　成ろう　成らない　（）　成れる　to become
-#
+
+test14 = doushi("成る").getForms()
+test14sol = {'Dictionary Form': '話す',
+            'English Definition': [''],
+            'Type': 'Godan verb',
+            'Masu': '',
+            'Nai': '',
+            'Te':'',
+            'Potential':'',
+            'Volitional':''
+}
+test(14, test14, test14sol)
+
 #Test 15:
 #Godan Verbs w/ ゆ
 #
 #Test 16:
 #Irregular Verb -　する
 #する　します　しよう　しない　（）　でくる　to do
-#
+
+test16 = doushi("する").getForms()
+test16sol = {'Dictionary Form': '話す',
+            'English Definition': [''],
+            'Type': 'Irregular verb',
+            'Masu': '',
+            'Nai': '',
+            'Te':'',
+            'Potential':'',
+            'Volitional':''
+}
+test(16, test16, test16sol)
+
+
 #Test 17:
 #Irregular Verb - 来る
 #来る　来ます　（）　来ない　（）　（）　to come
+
+test17 = doushi("来る").getForms()
+test17sol = {'Dictionary Form': '話す',
+            'English Definition': [''],
+            'Type': 'Irregular verb',
+            'Masu': '',
+            'Nai': '',
+            'Te':'',
+            'Potential':'',
+            'Volitional':''
+}
+test(17, test17, test17sol)
+
 
 #What happens to suru verbs? E.g. 散歩する
