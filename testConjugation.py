@@ -121,7 +121,20 @@ test(5, test5, test5sol)
 #
 #Test 7:
 #Godan Verbs w/　つ
-#
+
+test7 = doushi("待つ").getForms()
+test7sol = {'Dictionary Form': '待つ',
+            'English Definition': ['to wait'],
+            'Type': 'Godan verb',
+            'Masu': '待ちます',
+            'Nai': '待たない',
+            'Te':'待って',
+            'Potential':'待てる',
+            'Volitional':'待とう'
+}
+test(7, test7, test7sol)
+
+
 #Test 8:
 #Godan Verbs / づ
 #
