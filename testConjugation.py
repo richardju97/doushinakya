@@ -20,23 +20,23 @@ def test(num, testa, testb, desc):
     print("====== test" + str(num) + " ======\n")
     print("---- Running test" + str(num) + " ----")
 
-    stat = -1
+    stat = "Unknown"
 
     if(testa == testb):
         print("Test passed.\n")
-        stat = 1
+        stat = "PASSED"
     else:
         print("Test failed.\n")
         print("Actual Output:\n" + str(testa) + "\n")
         print("Expected Output:\n" + str(testb) + "\n")
-        stat = 0
+        stat = "FAILED"
 
     testcases.append({'ID':num, 'Description':desc, 'Status':stat})
 
 def printall():
     print("-------------------------------------------------")
     for i in testcases:
-        print("Test " + str(i))
+        print("Test " + str(i['ID']) + " : " + i['Description'] + " : " + i['Status'])
     print("-------------------------------------------------")
 
 
