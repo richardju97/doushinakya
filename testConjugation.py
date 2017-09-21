@@ -39,7 +39,6 @@ test1sol = {'Dictionary Form': '食べる',
             'Potential': '食べられる',
             'Volitional': '食べよう'
 }
-
 test(1, test1, test1sol)
 
 #Test 2:
@@ -49,11 +48,11 @@ test2 = doushi("買う").getForms()
 test2sol = {'Dictionary Form': '買う',
             'English Definition': [''],
             'Type': 'Godan verb',
-            'Masu': '',
-            'Nai': '',
-            'Te':'',
-            'Potential':'',
-            'Volitional':''
+            'Masu': '買います',
+            'Nai': '買わない',
+            'Te':'買って',
+            'Potential':'買える',
+            'Volitional':'買おう'
 }
 test(2, test2, test2sol)
 
@@ -64,17 +63,30 @@ test3 = doushi("書く").getForms()
 test3sol = {'Dictionary Form': '書く',
             'English Definition': [''],
             'Type': 'Godan verb',
-            'Masu': '',
-            'Nai': '',
-            'Te':'',
-            'Potential':'',
-            'Volitional':''
+            'Masu': '書きます',
+            'Nai': '書かない',
+            'Te':'書いて',
+            'Potential':'書ける',
+            'Volitional':'書こう'
 }
 test(3, test3, test3sol)
 
 #Test 4:
 #Godan Verbs w/ ぐ
-#
+
+test4 = doushi("泳ぐ").getForms()
+test4sol = {'Dictionary Form': '泳ぐ',
+            'English Definition': ['to swim'],
+            'Type': 'Godan verb',
+            'Masu': '泳ぎます',
+            'Nai': '泳がない',
+            'Te':'泳いで',
+            'Potential':'泳げる',
+            'Volitional':'泳ごう'
+}
+test(3, test3, test3sol)
+
+
 #Test 5:
 #Godan Verbs w/　す
 
@@ -119,11 +131,11 @@ test13 = doushi("飲む").getForms()
 test13sol = {'Dictionary Form': '飲む',
             'English Definition': [''],
             'Type': 'Godan verb',
-            'Masu': '',
-            'Nai': '',
-            'Te':'',
-            'Potential':'',
-            'Volitional':''
+            'Masu': '飲みます',
+            'Nai': '飲まない',
+            'Te':'飲んで',
+            'Potential':'飲める',
+            'Volitional':'飲もう'
 }
 test(13, test13, test13sol)
 
@@ -135,11 +147,11 @@ test14 = doushi("成る").getForms()
 test14sol = {'Dictionary Form': '成る',
             'English Definition': [''],
             'Type': 'Godan verb',
-            'Masu': '',
-            'Nai': '',
-            'Te':'',
-            'Potential':'',
-            'Volitional':''
+            'Masu': '成ります',
+            'Nai': '成らない',
+            'Te':'成って',
+            'Potential':'成れる',
+            'Volitional':'成ろう'
 }
 test(14, test14, test14sol)
 
@@ -154,10 +166,10 @@ test16 = doushi("する").getForms()
 test16sol = {'Dictionary Form': 'する',
             'English Definition': [''],
             'Type': 'Irregular verb',
-            'Masu': '',
-            'Nai': '',
+            'Masu': 'します',
+            'Nai': 'しない',
             'Te':'',
-            'Potential':'',
+            'Potential':'できる',
             'Volitional':''
 }
 test(16, test16, test16sol)
@@ -171,9 +183,9 @@ test17 = doushi("来る").getForms()
 test17sol = {'Dictionary Form': '来る',
             'English Definition': [''],
             'Type': 'Irregular verb',
-            'Masu': '',
-            'Nai': '',
-            'Te':'',
+            'Masu': '来ます',
+            'Nai': '来ない',
+            'Te':'来て',
             'Potential':'',
             'Volitional':''
 }
