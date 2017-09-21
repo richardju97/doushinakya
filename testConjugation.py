@@ -16,7 +16,7 @@ testcases = []
 
 print("Running all test cases:\n")
 
-def test(num, testa, testb):
+def test(num, testa, testb, desc):
     print("====== test" + str(num) + " ======\n")
     print("---- Running test" + str(num) + " ----")
 
@@ -31,7 +31,7 @@ def test(num, testa, testb):
         print("Expected Output:\n" + str(testb) + "\n")
         stat = 0
 
-    testcases.append({num:stat})
+    testcases.append({'ID':num, 'Description':desc, 'Status':stat})
 
 def printall():
     print("-------------------------------------------------")
@@ -53,7 +53,7 @@ test1sol = {'Dictionary Form': '食べる',
             'Potential': '食べられる',
             'Volitional': '食べよう'
 }
-test(1, test1, test1sol)
+test(1, test1, test1sol, "Ichidan Verbs")
 
 #Test 2:
 #Godan Verbs w/　う
@@ -68,7 +68,7 @@ test2sol = {'Dictionary Form': '買う',
             'Potential':'買える',
             'Volitional':'買おう'
 }
-test(2, test2, test2sol)
+test(2, test2, test2sol, "Godan Verbs w/　う")
 
 #Test 3:
 #Godan Verbs w/　く
@@ -83,7 +83,7 @@ test3sol = {'Dictionary Form': '書く',
             'Potential':'書ける',
             'Volitional':'書こう'
 }
-test(3, test3, test3sol)
+test(3, test3, test3sol, "Godan Verbs w/　く")
 
 #Test 4:
 #Godan Verbs w/ ぐ
@@ -98,7 +98,7 @@ test4sol = {'Dictionary Form': '泳ぐ',
             'Potential':'泳げる',
             'Volitional':'泳ごう'
 }
-test(4, test4, test4sol)
+test(4, test4, test4sol, "Godan Verbs w/ ぐ")
 
 
 #Test 5:
@@ -114,7 +114,7 @@ test5sol = {'Dictionary Form': '話す',
             'Potential':'話せる',
             'Volitional':'話そう'
 }
-test(5, test5, test5sol)
+test(5, test5, test5sol, "Godan Verbs w/　す")
 
 #Test 6:
 #Godan Verbs w/ ず
@@ -132,7 +132,7 @@ test7sol = {'Dictionary Form': '待つ',
             'Potential':'待てる',
             'Volitional':'待とう'
 }
-test(7, test7, test7sol)
+test(7, test7, test7sol, "Godan Verbs w/　つ")
 
 #Test 8:
 #Godan Verbs / づ
@@ -163,7 +163,7 @@ test13sol = {'Dictionary Form': '飲む',
             'Potential':'飲める',
             'Volitional':'飲もう'
 }
-test(13, test13, test13sol)
+test(13, test13, test13sol, "Godan Verbs w/ む")
 
 #Test 14:
 #Godan Verbs w/ る
@@ -179,7 +179,7 @@ test14sol = {'Dictionary Form': '成る',
             'Potential':'成れる',
             'Volitional':'成ろう'
 }
-test(14, test14, test14sol)
+test(14, test14, test14sol, "Godan Verbs w/ る")
 
 #Test 15:
 #Godan Verbs w/ ゆ
@@ -198,7 +198,7 @@ test16sol = {'Dictionary Form': 'する',
             'Potential':'できる',
             'Volitional':''
 }
-test(16, test16, test16sol)
+test(16, test16, test16sol, "Irregular Verb (する)")
 
 
 #Test 17:
@@ -215,7 +215,7 @@ test17sol = {'Dictionary Form': '来る',
             'Potential':'',
             'Volitional':''
 }
-test(17, test17, test17sol)
+test(17, test17, test17sol, "Irregular Verb (来る)")
 
 #Test 18:
 #Irregular Verb - する Verbs
@@ -231,8 +231,6 @@ test18sol = {'Dictionary Form': '料理する',
             'Potential':'料理できる',
             'Volitional':''
 }
-test(18, test18, test18sol)
-
+test(18, test18, test18sol, "Irregular Verb (する Verbs)")
 
 printall()
-#What happens to suru verbs? E.g. 散歩する
