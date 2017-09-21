@@ -60,7 +60,7 @@ test(1, test1, test1sol)
 
 test2 = doushi("買う").getForms()
 test2sol = {'Dictionary Form': '買う',
-            'English Definition': [''],
+            'English Definition': ['to buy', 'to purchase'],
             'Type': 'Godan verb',
             'Masu': '買います',
             'Nai': '買わない',
@@ -75,7 +75,7 @@ test(2, test2, test2sol)
 
 test3 = doushi("書く").getForms()
 test3sol = {'Dictionary Form': '書く',
-            'English Definition': [''],
+            'English Definition': ['to write', 'to compose', 'to pen'],
             'Type': 'Godan verb',
             'Masu': '書きます',
             'Nai': '書かない',
@@ -143,7 +143,7 @@ test(5, test5, test5sol)
 
 test13 = doushi("飲む").getForms()
 test13sol = {'Dictionary Form': '飲む',
-            'English Definition': [''],
+            'English Definition': ['to drink', 'to gulp', 'to swallow', 'to take (medicine)'],
             'Type': 'Godan verb',
             'Masu': '飲みます',
             'Nai': '飲まない',
