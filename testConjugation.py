@@ -22,8 +22,8 @@ def test(num, testa, testb):
         print("Test passed.\n")
     else:
         print("Test failed.\n")
-        print("Output: " + str(testa))
-        print("Expected Output:" + str(testb))
+        print("Output:\n" + str(testa))
+        print("Expected Output:\n" + str(testb))
 
 
 #Test 1:
