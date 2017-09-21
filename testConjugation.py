@@ -46,14 +46,30 @@ test(1, test1, test1sol)
 #Godan Verbs w/　う
 
 test2 = doushi("買う").getForms()
-test2sol = {}
+test2sol = {'Dictionary Form': '買う',
+            'English Definition': [''],
+            'Type': 'Godan verb',
+            'Masu': '',
+            'Nai': '',
+            'Te':'',
+            'Potential':'',
+            'Volitional':''
+}
 test(2, test2, test2sol)
 
 #Test 3:
 #Godan Verbs w/　く
 
-test3 = doushi("").getForms()
-test3sol = {}
+test3 = doushi("書く").getForms()
+test3sol = {'Dictionary Form': '書く',
+            'English Definition': [''],
+            'Type': 'Godan verb',
+            'Masu': '',
+            'Nai': '',
+            'Te':'',
+            'Potential':'',
+            'Volitional':''
+}
 test(3, test3, test3sol)
 
 #Test 4:
@@ -100,7 +116,7 @@ test(5, test5, test5sol)
 #飲む　飲みます　飲もう　飲まない　飲んで　飲める　to drink
 
 test13 = doushi("飲む").getForms()
-test13sol = {'Dictionary Form': '話す',
+test13sol = {'Dictionary Form': '飲む',
             'English Definition': [''],
             'Type': 'Godan verb',
             'Masu': '',
@@ -116,7 +132,7 @@ test(13, test13, test13sol)
 #成る　成ります　成ろう　成らない　（）　成れる　to become
 
 test14 = doushi("成る").getForms()
-test14sol = {'Dictionary Form': '話す',
+test14sol = {'Dictionary Form': '成る',
             'English Definition': [''],
             'Type': 'Godan verb',
             'Masu': '',
@@ -135,7 +151,7 @@ test(14, test14, test14sol)
 #する　します　しよう　しない　（）　でくる　to do
 
 test16 = doushi("する").getForms()
-test16sol = {'Dictionary Form': '話す',
+test16sol = {'Dictionary Form': 'する',
             'English Definition': [''],
             'Type': 'Irregular verb',
             'Masu': '',
@@ -152,7 +168,7 @@ test(16, test16, test16sol)
 #来る　来ます　（）　来ない　（）　（）　to come
 
 test17 = doushi("来る").getForms()
-test17sol = {'Dictionary Form': '話す',
+test17sol = {'Dictionary Form': '来る',
             'English Definition': [''],
             'Type': 'Irregular verb',
             'Masu': '',
