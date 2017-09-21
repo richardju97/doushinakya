@@ -12,18 +12,32 @@ subprocess.check_output(['git', 'push', 'origin', 'master'])
 # Import conjugation.py
 from conjugation import doushi
 
+testcases = []
+
 print("Running all test cases:\n")
 
 def test(num, testa, testb):
     print("====== test" + str(num) + " ======\n")
     print("---- Running test" + str(num) + " ----")
 
+    stat = -1
+
     if(testa == testb):
         print("Test passed.\n")
+        stat = 1
     else:
         print("Test failed.\n")
         print("Actual Output:\n" + str(testa) + "\n")
         print("Expected Output:\n" + str(testb) + "\n")
+        stat = 0
+
+    testcases.append({num:stat})
+
+def printall():
+    print("-------------------------------------------------")
+    for i in testcases:
+        print("Test " + str(i))
+    print("-------------------------------------------------")
 
 
 #Test 1:
