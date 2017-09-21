@@ -159,7 +159,7 @@ test(13, test13, test13sol)
 
 test14 = doushi("成る").getForms()
 test14sol = {'Dictionary Form': '成る',
-            'English Definition': [''],
+            'English Definition': ['to become', 'to get', 'to grow', 'to be', 'to reach', 'to attain'],
             'Type': 'Godan verb',
             'Masu': '成ります',
             'Nai': '成らない',
@@ -178,7 +178,7 @@ test(14, test14, test14sol)
 
 test16 = doushi("する").getForms()
 test16sol = {'Dictionary Form': 'する',
-            'English Definition': [''],
+            'English Definition': ['to do'],
             'Type': 'Irregular verb',
             'Masu': 'します',
             'Nai': 'しない',
@@ -195,7 +195,7 @@ test(16, test16, test16sol)
 
 test17 = doushi("来る").getForms()
 test17sol = {'Dictionary Form': '来る',
-            'English Definition': [''],
+            'English Definition': ['to come (spatially or temporally)', 'to approach', 'to arrive'],
             'Type': 'Irregular verb',
             'Masu': '来ます',
             'Nai': '来ない',
