@@ -134,7 +134,6 @@ test7sol = {'Dictionary Form': '待つ',
 }
 test(7, test7, test7sol)
 
-
 #Test 8:
 #Godan Verbs / づ
 #
@@ -217,6 +216,23 @@ test17sol = {'Dictionary Form': '来る',
             'Volitional':''
 }
 test(17, test17, test17sol)
+
+#Test 18:
+#Irregular Verb - する Verbs
+#来る　来ます　（）　来ない　（）　（）　to come
+
+test18 = doushi("料理する").getForms()
+test18sol = {'Dictionary Form': '料理する',
+            'English Definition': ['to cook'],
+            'Type': 'Irregular verb',
+            'Masu': '料理します',
+            'Nai': '料理しない',
+            'Te':'料理して',
+            'Potential':'料理できる',
+            'Volitional':''
+}
+test(18, test18, test18sol)
+
 
 printall()
 #What happens to suru verbs? E.g. 散歩する
