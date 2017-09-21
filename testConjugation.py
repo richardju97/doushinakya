@@ -84,7 +84,7 @@ test4sol = {'Dictionary Form': '泳ぐ',
             'Potential':'泳げる',
             'Volitional':'泳ごう'
 }
-test(3, test3, test3sol)
+test(4, test4, test4sol)
 
 
 #Test 5:
