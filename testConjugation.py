@@ -205,5 +205,5 @@ test17sol = {'Dictionary Form': '来る',
 }
 test(17, test17, test17sol)
 
-
+printall()
 #What happens to suru verbs? E.g. 散歩する
