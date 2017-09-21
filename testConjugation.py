@@ -23,7 +23,7 @@ def test(num, testa, testb):
     else:
         print("Test failed.\n")
         print("Output:\n" + str(testa))
-        print("Expected Output:\n" + str(testb))
+        print("Expected Output:\n" + str(testb) + "\n")
 
 
 #Test 1:
