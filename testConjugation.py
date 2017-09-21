@@ -223,7 +223,7 @@ test(17, test17, test17sol)
 
 test18 = doushi("料理する").getForms()
 test18sol = {'Dictionary Form': '料理する',
-            'English Definition': ['to cook'],
+            'English Definition': ['cooking', 'cookery', 'cuisine'],
             'Type': 'Irregular verb',
             'Masu': '料理します',
             'Nai': '料理しない',
