@@ -229,7 +229,7 @@ test18sol = {'Dictionary Form': '料理する',
             'Nai': '料理しない',
             'Te':'料理して',
             'Potential':'料理できる',
-            'Volitional':''
+            'Volitional':'料理しよう'
 }
 test(18, test18, test18sol, "Irregular Verb (する Verbs)")
 
