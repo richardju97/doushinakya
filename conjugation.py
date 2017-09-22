@@ -88,20 +88,22 @@ class doushi:
     def computeIchidan(self):
         self.forms['Type'] = 'Ichidan verb'
         
+        stem = self.forms['Dictionary Form'][:self.length+1]
+        
         # Masu Form
-        self.forms['Masu'] = (self.forms['Dictionary Form'][:self.length+1] + masu)
+        self.forms['Masu'] = (stem + masu)
         
         # Nai Form
-        self.forms['Nai'] = (self.forms['Dictionary Form'][:self.length+1] + nai)
+        self.forms['Nai'] = (stem + nai)
 
         # Te Form
-        self.forms['Te'] = (self.forms['Dictionary Form'][:self.length+1] + te)
+        self.forms['Te'] = (stem + te)
 
         # Potential Form
-        self.forms['Potential'] = (self.forms['Dictionary Form'][:self.length+1] + rareru)
+        self.forms['Potential'] = (stem + rareru)
     
         # Volitional Form
-        self.forms['Volitional'] = (self.forms['Dictionary Form'][:self.length+1] + you)
+        self.forms['Volitional'] = (stem + you)
     
     def computeGodan(self):
         self.forms['Type'] = 'Godan verb'
