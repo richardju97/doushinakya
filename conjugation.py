@@ -119,9 +119,21 @@ class doushi:
             utoa = chr(ord(self.forms['Dictionary Form'][self.length+1])-2)
         self.forms['Nai'] = (self.forms['Dictionary Form'][:self.length+1] + str(utoa) + nai)
 
+        # Te Form
+        # u tsu ru -> small tsu te
+        # ku -> i te, gu -> i de
+        #
+
         # Potential Form
         utoe = chr(ord(self.forms['Dictionary Form'][self.length+1])+1)
         self.forms['Potential'] = (self.forms['Dictionary Form'][self.length+1] + str(utoe) + 'る')
+            
+        # Volitional Form
+        u = 'う'
+        o = self.forms['Dictionary Form'][self.length+1] + 2
+        self.forms['Volitional'] = (stem + o + u)
+            
+        
 
     def computeIrregular(self):
         if (self.forms['Dictionary Form'] == '来る'):
