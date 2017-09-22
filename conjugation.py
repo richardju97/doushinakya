@@ -130,7 +130,7 @@ class doushi:
             
         # Volitional Form
         u = 'う'
-        o = self.forms['Dictionary Form'][self.length+1] + 2
+        utoo = chr(ord(self.forms['Dictionary Form'][self.length+1]) + 2)
         self.forms['Volitional'] = (stem + o + u)
             
         
