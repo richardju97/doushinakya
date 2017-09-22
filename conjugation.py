@@ -107,7 +107,8 @@ class doushi:
     
     def computeGodan(self):
         self.forms['Type'] = 'Godan verb'
-        
+        stem = self.forms['Dictionary Form'][:self.length+1]
+
         # Masu Form
         utoi = chr(ord(self.forms['Dictionary Form'][self.length+1])-1)
         self.forms['Masu'] = (self.forms['Dictionary Form'][:self.length+1] + str(utoi) + masu)
