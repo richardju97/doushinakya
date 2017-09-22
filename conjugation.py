@@ -128,7 +128,7 @@ class doushi:
             self.forms = suruBase
         else:
             self.forms['Type'] = 'Irregular verb'
-            self.forms['Masu'] = self.forms['Dictionary Form'][:self.length+1] + suruBase['Masu']
+            self.forms['Masu'] = self.forms['Dictionary Form'][:self.length] + suruBase['Masu']
             self.forms['Nai'] = suruBase['Nai']
             self.forms['Te'] = suruBase['Te']
             self.forms['Potential'] = suruBase['Potential']
