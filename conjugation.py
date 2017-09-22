@@ -123,7 +123,26 @@ class doushi:
         # Te Form
         # u tsu ru -> small tsu te
         # ku -> i te, gu -> i de
-        #
+        # nu bu mu -> nde
+        # su -> shite
+        # iku -> itte
+        
+        sound = self.forms['Dictionary Form'][self.length+1]
+        
+        if (self.forms['Dictionary Form'] == '行く'):
+            self.forms['Te'] = '行って'
+        elif(sound == 'す'):
+            self.forms['Te'] = stem + 'して'
+        elif(sound == 'ぬ' or sound == 'ぶ' or sound == 'む'):
+            self.forms['Te'] = stem + 'んで'
+        elif(sound == 'う' or sound == 'つ' or sound == 'る'):
+            self.forms['Te'] = stem + 'って'
+        elif(sound == 'く'):
+            self.forms['Te'] = stem + 'いて'
+        elif(sound == 'ぐ'):
+            self.forms['Te'] = stem + 'いで'
+        else:
+            self.forms['Te'] = 'ERROR'
 
         # Potential Form
         utoe = chr(ord(self.forms['Dictionary Form'][self.length+1])+1)
@@ -133,8 +152,6 @@ class doushi:
         u = 'う'
         utoo = chr(ord(self.forms['Dictionary Form'][self.length+1]) + 4)
         self.forms['Volitional'] = (stem + utoo + u)
-            
-        
 
     def computeIrregular(self):
         if (self.forms['Dictionary Form'] == '来る'):
