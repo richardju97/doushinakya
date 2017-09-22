@@ -53,6 +53,16 @@ you = 'よう'
 
 # Either functions with dic -> masu, masu -> dic, etc. or object initialized with dictionary form
 
+kuruForms = {'Dictionary Form': '来る',
+    'English Definition': ['to come (spatially or temporally)', 'to approach', 'to arrive'],
+        'Type': 'Irregular verb',
+            'Masu': '来ます',
+            'Nai': '来ない',
+            'Te':'来て',
+            'Potential':'来られる',
+            'Volitional':'来よう'
+}
+
 class doushi:
     def __init__(self, dic):
         self.forms = {'Dictionary Form' : dic}
@@ -102,7 +112,10 @@ class doushi:
         self.forms['Potential'] = (self.forms['Dictionary Form'][self.length+1] + str(utoe) + 'る')
 
     def computeIrregular(self):
-        self.forms['Type'] = 'Irregular verb'
+        if (self.forms['Dictionary Form'] == '来る')
+            self.forms = kuruForms
+        else:
+            self.forms['Type'] = 'Irregular verb'
 
     def computeForms(self):
         r = requests.get(url + self.forms['Dictionary Form']).json()
