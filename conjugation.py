@@ -127,12 +127,13 @@ class doushi:
         elif(self.forms['Dictionary Form'] == 'する'):
             self.forms = suruBase
         else:
+            stem = self.forms['Dictionary Form'][:self.length]
             self.forms['Type'] = 'Irregular verb'
-            self.forms['Masu'] = self.forms['Dictionary Form'][:self.length] + suruBase['Masu']
-            self.forms['Nai'] = suruBase['Nai']
-            self.forms['Te'] = suruBase['Te']
-            self.forms['Potential'] = suruBase['Potential']
-            self.forms['Volitional'] = suruBase['Volitional']
+            self.forms['Masu'] = stem + suruBase['Masu']
+            self.forms['Nai'] = stem + suruBase['Nai']
+            self.forms['Te'] = stem + suruBase['Te']
+            self.forms['Potential'] = stem + suruBase['Potential']
+            self.forms['Volitional'] = stem + suruBase['Volitional']
 
     def computeForms(self):
         r = requests.get(url + self.forms['Dictionary Form']).json()
