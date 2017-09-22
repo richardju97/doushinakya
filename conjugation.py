@@ -128,6 +128,11 @@ class doushi:
             self.forms = suruBase
         else:
             self.forms['Type'] = 'Irregular verb'
+            self.forms['Masu'] = self.forms['Dictionary Form'][:self.length+1] + suruBase['Masu']
+            self.forms['Nai'] = suruBase['Nai']
+            self.forms['Te'] = suruBase['Te']
+            self.forms['Potential'] = suruBase['Potential']
+            self.forms['Volitional'] = suruBase['Volitional']
 
     def computeForms(self):
         r = requests.get(url + self.forms['Dictionary Form']).json()
@@ -137,22 +142,15 @@ class doushi:
     #    print("Connection to jisho.org successful")
     
             data = r['data'][0]['senses'][0]
-            
             self.forms['English Definition'] = data['english_definitions']
-#            print("English Definition: " + str(data['english_definitions']))
-
-#            self.forms['Type of Verb'] = data['parts_of_speech'][0]
-#            print("Type of Verb: " + str(data['parts_of_speech']))
 
     #   If Ru-Verb / Ichidan
             if(data['parts_of_speech'][0] == 'Ichidan verb'):
                 self.computeIchidan()
-#                print("Masu Form: " + self.forms['Dictionary Form'][:self.length+1] + masu)
 
     #   If U-Verb / Godan
             elif(data['parts_of_speech'][0][:10] == 'Godan verb'):
                 self.computeGodan()
-#                print("Masu Form: " + self.forms['Dictionary Form'][:self.length+1] + str(utoi) + masu)
             else:
                 self.computeIrregular()
 
