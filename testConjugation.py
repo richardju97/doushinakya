@@ -194,9 +194,9 @@ test16sol = {'Dictionary Form': 'する',
             'Type': 'Irregular verb',
             'Masu': 'します',
             'Nai': 'しない',
-            'Te':'',
+            'Te':'して',
             'Potential':'できる',
-            'Volitional':''
+            'Volitional':'しよう'
 }
 test(16, test16, test16sol, "Irregular Verb (する)")
 
@@ -212,8 +212,8 @@ test17sol = {'Dictionary Form': '来る',
             'Masu': '来ます',
             'Nai': '来ない',
             'Te':'来て',
-            'Potential':'',
-            'Volitional':''
+            'Potential':'来られる',
+            'Volitional':'来よう'
 }
 test(17, test17, test17sol, "Irregular Verb (来る)")
 
