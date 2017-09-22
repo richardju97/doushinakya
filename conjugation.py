@@ -54,13 +54,23 @@ you = 'よう'
 # Either functions with dic -> masu, masu -> dic, etc. or object initialized with dictionary form
 
 kuruForms = {'Dictionary Form': '来る',
-    'English Definition': ['to come (spatially or temporally)', 'to approach', 'to arrive'],
-        'Type': 'Irregular verb',
+            'English Definition': ['to come (spatially or temporally)', 'to approach', 'to arrive'],
+            'Type': 'Irregular verb',
             'Masu': '来ます',
             'Nai': '来ない',
             'Te':'来て',
             'Potential':'来られる',
             'Volitional':'来よう'
+}
+
+suruBase = {'Dictionary Form': 'する',
+            'English Definition': ['to do'],
+            'Type': 'Irregular verb',
+            'Masu': 'します',
+            'Nai': 'しない',
+            'Te':'して',
+            'Potential':'できる',
+            'Volitional':'しよう'
 }
 
 class doushi:
@@ -114,6 +124,8 @@ class doushi:
     def computeIrregular(self):
         if (self.forms['Dictionary Form'] == '来る'):
             self.forms = kuruForms
+        elif(self.forms['Dictionary Form'] == 'する'):
+            self.forms = suruBase
         else:
             self.forms['Type'] = 'Irregular verb'
 
