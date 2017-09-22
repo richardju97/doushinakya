@@ -112,7 +112,7 @@ class doushi:
         self.forms['Potential'] = (self.forms['Dictionary Form'][self.length+1] + str(utoe) + 'る')
 
     def computeIrregular(self):
-        if (self.forms['Dictionary Form'] == '来る')
+        if (self.forms['Dictionary Form'] == "来る")
             self.forms = kuruForms
         else:
             self.forms['Type'] = 'Irregular verb'
