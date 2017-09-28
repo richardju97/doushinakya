@@ -146,7 +146,7 @@ class doushi:
 
         # Potential Form
         utoe = chr(ord(self.forms['Dictionary Form'][self.length+1])+2)
-        self.forms['Potential'] = (self.forms['Dictionary Form'][self.length+1] + str(utoe) + 'る')
+        self.forms['Potential'] = (stem + str(utoe) + 'る')
             
         # Volitional Form
         u = 'う'
