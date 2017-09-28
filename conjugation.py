@@ -110,14 +110,14 @@ class doushi:
         stem = self.forms['Dictionary Form'][:self.length+1]
 
         # Masu Form
-        utoi = chr(ord(self.forms['Dictionary Form'][self.length+1])-1)
+        utoi = chr(ord(self.forms['Dictionary Form'][self.length+1])-2)
         self.forms['Masu'] = (self.forms['Dictionary Form'][:self.length+1] + str(utoi) + masu)
 
         # Nai Form
         if (self.forms['Dictionary Form'][self.length+1] == 'う'):
             utoa = 'わ'
         else:
-            utoa = chr(ord(self.forms['Dictionary Form'][self.length+1])-2)
+            utoa = chr(ord(self.forms['Dictionary Form'][self.length+1])-4)
         self.forms['Nai'] = (self.forms['Dictionary Form'][:self.length+1] + str(utoa) + nai)
 
         # Te Form
@@ -145,7 +145,7 @@ class doushi:
             self.forms['Te'] = 'ERROR'
 
         # Potential Form
-        utoe = chr(ord(self.forms['Dictionary Form'][self.length+1])+1)
+        utoe = chr(ord(self.forms['Dictionary Form'][self.length+1])+2)
         self.forms['Potential'] = (self.forms['Dictionary Form'][self.length+1] + str(utoe) + 'る')
             
         # Volitional Form
