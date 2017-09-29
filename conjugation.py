@@ -110,7 +110,13 @@ class doushi:
         stem = self.forms['Dictionary Form'][:self.length+1]
 
         # Masu Form
-        utoi = chr(ord(self.forms['Dictionary Form'][self.length+1])-2)
+        last = self.forms['Dictionary Form'][self.length+1]
+        utoi = None
+        if (last == 'る'):
+            utoi = chr(ord(last)-1)
+        else:
+            utoi = chr(ord(last)-2)
+
         self.forms['Masu'] = (self.forms['Dictionary Form'][:self.length+1] + str(utoi) + masu)
 
         # Nai Form
