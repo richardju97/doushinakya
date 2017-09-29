@@ -114,7 +114,7 @@ class doushi:
         utoi = None
         if (last <= 'ぞ'):
             utoi = chr(ord(last)-2)
-        elif (last == 'る' || last == 'む' || last == 'ぬ'):
+        elif (last == 'る' or last == 'む' or last == 'ぬ'):
             utoi = chr(ord(last)-1)
         elif (last <= 'ぽ'):
             utoi = chr(ord(last)-3)
