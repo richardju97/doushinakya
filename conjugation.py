@@ -133,7 +133,7 @@ class doushi:
         elif (last <= 'ぽ'):
             utoa = chr(ord(last)-6)
         else:
-            utoa = chr(ord(last)-5)
+            utoa = chr(ord(last)-4)
 
         self.forms['Nai'] = (self.forms['Dictionary Form'][:self.length+1] + str(utoa) + nai)
 
