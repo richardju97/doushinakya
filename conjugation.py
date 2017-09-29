@@ -162,7 +162,12 @@ class doushi:
             self.forms['Te'] = 'ERROR'
 
         # Potential Form
-        utoe = chr(ord(self.forms['Dictionary Form'][self.length+1])+2)
+        if (last <= 'づ'):
+            utoe = chr(ord(last)+2)
+        elif (last == 'る' or last == 'む' or last == 'ぬ'):
+            utoe = chr(ord(last)+1)
+        elif (last <= 'ぽ'):
+            utoa = chr(ord(last)+3)
         self.forms['Potential'] = (stem + str(utoe) + 'る')
             
         # Volitional Form
