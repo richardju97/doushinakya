@@ -124,10 +124,11 @@ class doushi:
         self.forms['Masu'] = (self.forms['Dictionary Form'][:self.length+1] + str(utoi) + masu)
 
         # Nai Form
-        if (self.forms['Dictionary Form'][self.length+1] == 'う'):
+        if (last == 'う'):
             utoa = 'わ'
         else:
-            utoa = chr(ord(self.forms['Dictionary Form'][self.length+1])-4)
+            utoa = chr(ord(last)-4)
+
         self.forms['Nai'] = (self.forms['Dictionary Form'][:self.length+1] + str(utoa) + nai)
 
         # Te Form
