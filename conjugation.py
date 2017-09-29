@@ -118,8 +118,8 @@ class doushi:
             utoi = chr(ord(last)-1)
         elif (last <= 'ぽ'):
             utoi = chr(ord(last)-3)
-        else:
-            utoi = chr(ord(last)-3)
+#        else:
+#            utoi = chr(ord(last)-3)
 
         self.forms['Masu'] = (self.forms['Dictionary Form'][:self.length+1] + str(utoi) + masu)
 
@@ -130,10 +130,11 @@ class doushi:
             utoa = chr(ord(last)-4)
         elif (last == 'る' or last == 'む' or last == 'ぬ'):
             utoa = chr(ord(last)-2)
+        elif (last <= 'づ'):
+            utoa = chr(ord(last)-5)
         elif (last <= 'ぽ'):
             utoa = chr(ord(last)-6)
-        else:
-            utoa = chr(ord(last)-4)
+
 
         self.forms['Nai'] = (self.forms['Dictionary Form'][:self.length+1] + str(utoa) + nai)
 
