@@ -126,8 +126,14 @@ class doushi:
         # Nai Form
         if (last == 'う'):
             utoa = 'わ'
-        else:
+        elif (last <= 'ぞ'):
             utoa = chr(ord(last)-4)
+        elif (last == 'る' or last == 'む' or last == 'ぬ'):
+            utoi = chr(ord(last)-2)
+        elif (last <= 'ぽ'):
+            utoi = chr(ord(last)-6)
+        else:
+            utoa = chr(ord(last)-5)
 
         self.forms['Nai'] = (self.forms['Dictionary Form'][:self.length+1] + str(utoa) + nai)
 
