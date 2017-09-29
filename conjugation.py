@@ -172,7 +172,15 @@ class doushi:
             
         # Volitional Form
         u = 'う'
-        utoo = chr(ord(self.forms['Dictionary Form'][self.length+1]) + 4)
+
+        if (last <= 'づ'):
+            utoo = chr(ord(last)+4)
+        elif (last == 'る' or last == 'む' or last == 'ぬ'):
+            utoo = chr(ord(last)+2)
+        elif (last <= 'ぽ'):
+            utoo = chr(ord(last)+6)
+
+#        utoo = chr(ord(self.forms['Dictionary Form'][self.length+1]) + 4)
         self.forms['Volitional'] = (stem + utoo + u)
 
     def computeIrregular(self):
