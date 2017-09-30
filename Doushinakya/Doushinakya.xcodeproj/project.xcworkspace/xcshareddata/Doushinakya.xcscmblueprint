@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3A346A69706782FEA5F5B6FC3C3127A388BD8300",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "47B4CEF806712970B720B6850EA0882610CE0C9E" : 9223372036854775807,
+    "3A346A69706782FEA5F5B6FC3C3127A388BD8300" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E1CFB5B5-27E3-4CBF-A441-EC9827BF533F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "47B4CEF806712970B720B6850EA0882610CE0C9E" : "",
+    "3A346A69706782FEA5F5B6FC3C3127A388BD8300" : "doushinakya\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Doushinakya",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Doushinakya\/Doushinakya.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:richardju97\/doushinakya.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3A346A69706782FEA5F5B6FC3C3127A388BD8300"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:scott246\/CSCapstone.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "47B4CEF806712970B720B6850EA0882610CE0C9E"
+    }
+  ]
+}
