@@ -22,6 +22,12 @@ class ViewController: NSViewController {
         }
     }
 
+    @IBOutlet weak var VerbDic: NSTextField!
 
+    @IBOutlet weak var DispVerb: NSTextField!
+    
+    @IBAction func Submit(_ sender: NSButton) {
+        DispVerb.stringValue = "Testing"
+    }
 }
 
