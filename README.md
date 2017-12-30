@@ -12,5 +12,10 @@ Currently supports the following conjugations:
 + Potential Form
 + Volitional Form
 
+# NodeJS/Angular Web Application
+Currently in development.
+
 # Mac OS X Application
 Currently in development.
+
+
