@@ -36,7 +36,15 @@ app.controller('homeController', function($scope, $http) {
 					data: JSON.stringify({
 						"verb" : $scope.verb
 					})
+				})
+				.then(function successCallBack(response) {
+					console.log("then function");
+					console.log(response);	
+				}
+				, function errCallBack(response) {
+					console.log("Error");
 				});
+				//$http.post('/conjugate');
 			}
 		};
 		
