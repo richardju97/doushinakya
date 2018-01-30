@@ -54,9 +54,10 @@ app.post('/conjugate', function(req, res) {
 	*/
 	console.log(req['body']['verb']);
 	var c = "";
-	var py = spawn('python', ['conjugatefornode.py', 'oreo']);
+	var py = spawn('python', ['conjugatefornode.py', req['body']['verb']]);
 	py.stdout.on('data', function(data) {
 		console.log("got result back from python");
+		c += data.toString();
 		console.log(data.toString());
 	});	
 });
