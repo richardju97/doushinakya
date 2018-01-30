@@ -1,17 +1,15 @@
 
 <!-- conjugate.html -->
 
-asdfjk
-
 <div class="container">
 
-asdfjkl
-
+	<br><br>
 	<div class="input-group">
-		<input type="text" class="form-control" placeholder="Verb (Dictionary Form)" aria-describedby="verbtoconjugate">
+		<input type="text" class="form-control" placeholder="Verb (Dictionary Form)" aria-describedby="verbtoconjugate" ng-model="verb">
 		<span class="input-group-btn">
-        		<button class="btn btn-secondary" type="button">Go!</button>
+        		<button class="btn btn-secondary" type="submit" ng-model="conjugatebutton" ng-click="conjugate();">Go!</button>
       		</span>
+		{{ conjugations }}
 	</div>	
 
 </div>
