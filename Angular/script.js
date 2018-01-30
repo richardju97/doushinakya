@@ -24,7 +24,14 @@ app.controller('mainController', function($scope) {} );
 app.controller('homeController', function($scope, $http) {
                
               	$scope.name = "homeController";
-		$scope.conjugations = "";
+		$scope.dic = "";
+		$scope.eng = "";
+		$scope.type = "";
+		$scope.masu = "";
+		$scope.nai = "";
+		$scope.te = "";
+		$scope.pot = "";
+		$scope.vol = "";
 		
 		$scope.conjugate = function() {
 			if ($scope.verb != "") {
@@ -39,7 +46,10 @@ app.controller('homeController', function($scope, $http) {
 				})
 				.then(function successCallBack(response) {
 					console.log("then function");
-					console.log(response);	
+					//console.log(Object.prototype.toString.call(JSON.parse(response.data)));	
+					//console.log(eval("(" + response.data + ")"));	
+					var obj = eval("(" + response.data + ")");	
+					$scope.dic = obj['Dictionary Form'];
 				}
 				, function errCallBack(response) {
 					console.log("Error");
