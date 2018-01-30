@@ -15,6 +15,14 @@ router.use(function(req, res, next) {
 	console.log("/" + req.method);
 	next();
 });
+/*
+var server = app.listen(9000);
+var WebSocketServer = require('websocket').server;
+wsServer = new WebSocketServer({
+	httpServer: server
+});
+*/
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
@@ -58,7 +66,24 @@ app.post('/conjugate', function(req, res) {
 	py.stdout.on('data', function(data) {
 		console.log("got result back from python");
 		c += data.toString();
-		console.log(data.toString());
+		console.log(c);
+
+		res.send(JSON.stringify(c));
+		/*
+		wsServer.on('request', function(r) {
+			var connection = r.accept('echo-protocol', r.origin);
+			console.log('Connection accepted');
+			connection.on('message', function(message) {
+				console.log('message received! sending conjugations!');
+				connection.sendUTF(c);					
+			});
+
+			connection.on('close', function(reasonCode, desc) {
+				console.log('disconnected');
+			});
+		});
+		*/
+				
 	});	
 });
 //router.get("/", function(req, res){
