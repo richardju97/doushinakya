@@ -65,10 +65,12 @@ app.post('/conjugate', function(req, res) {
 	var py = spawn('python', ['conjugatefornode.py', req['body']['verb']]);
 	py.stdout.on('data', function(data) {
 		console.log("got result back from python");
-		c += data.toString();
-		console.log(c);
-
-		res.send(JSON.stringify(c));
+		//c += data.toString();
+		//console.log(c);
+		//res.send(c);
+		var d = data;
+		console.log(d.toString());
+		res.send(d);
 		/*
 		wsServer.on('request', function(r) {
 			var connection = r.accept('echo-protocol', r.origin);
