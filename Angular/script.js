@@ -47,9 +47,16 @@ app.controller('homeController', function($scope, $http) {
 				.then(function successCallBack(response) {
 					console.log("then function");
 					//console.log(Object.prototype.toString.call(JSON.parse(response.data)));	
-					//console.log(eval("(" + response.data + ")"));	
+					console.log(eval("(" + response.data + ")"));	
 					var obj = eval("(" + response.data + ")");	
-					$scope.dic = obj['Dictionary Form'];
+					$scope.dic = "Dictionary Form: " + obj['Dictionary Form'];
+					$scope.eng = "English: " + obj['English Definition'];
+					$scope.type = "Type: " + obj['Type'];
+					$scope.masu = "Masu Form: " + obj['Masu'];
+					$scope.nai = "Negative (Nai) Form: " + obj['Nai'];
+					$scope.te = "Te Form: " + obj['Te'];
+					$scope.pot = "Potential Form: " + obj['Potential'];
+					$scope.vol = "Volitional Form: " + obj['Volitional'];
 				}
 				, function errCallBack(response) {
 					console.log("Error");
