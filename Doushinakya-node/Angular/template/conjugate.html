@@ -4,19 +4,22 @@
 <div class="container">
 
 	<br><br>
+	<h1>Doushinakya</h1>
 	<div class="input-group">
 		<input type="text" class="form-control" placeholder="Verb (Dictionary Form)" aria-describedby="verbtoconjugate" ng-model="verb">
 		<span class="input-group-btn">
         		<button class="btn btn-secondary" type="submit" ng-model="conjugatebutton" ng-click="conjugate();">Conjugate</button>
       		</span>
-	</div>	
-
-		{{ dic }}
-		{{ eng }}
-		{{ type }}
-		{{ masu }}
-		{{ nai }}
-		{{ te }}
-		{{ pot }}
-		{{ vol }}
+	<div class="container text-muted small">Usage notes: Input a Japanese Verb in Dictionary that you want to conjugate; using Kanji helps to ensure you get the right verb. </div>
+	</div>	<br>
+	<div class="container">
+		{{ dic }}<br>
+		{{ eng }}<br>
+		{{ type }}<br>
+		{{ masu }}<br>
+		{{ nai }}<br>
+		{{ te }}<br>
+		{{ pot }}<br>
+		{{ vol }}<br>
+	</div>
 </div>
