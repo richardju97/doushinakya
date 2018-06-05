@@ -11,9 +11,16 @@ Currently supports the following conjugations:
 + Te Form
 + Potential Form
 + Volitional Form
++ English Translation
+
+To Do:
+Command Form
 
 # NodeJS/Angular Web Application
-Currently in development.
+Live. Jisho.org API is currently in it's alpha development phase, and as such causes a security issue when accessed by Node/Angular. Workaround has Node call the API via a Python Script.
+
+In Progress:
+Toggle which forms you want displayed
 
 # Mac OS X Application
 Currently in development.
